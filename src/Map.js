@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-
+import zoomIn from "./assets/zoomIn.svg";
+import zoomOut from "./assets/zoomOut.svg";
 import Arrow from "./Arrow";
 import {
   fetchWikiTitles,
@@ -68,13 +69,13 @@ export default function Map({ initialWikiData, setInitialWikiData }) {
     }
     let newViewBox = [];
 
-    if (e.deltaY > 0) {
+    if ((e.deltaY > 0) | (e.currentTarget.className === "zoom__out")) {
       newViewBox[0] = viewBox[0] - viewBox[2] / 2;
       newViewBox[1] = viewBox[1] - viewBox[3] / 2;
       newViewBox[2] = viewBox[2] * 2;
       newViewBox[3] = viewBox[3] * 2;
     }
-    if (e.deltaY < 0) {
+    if ((e.deltaY < 0) | (e.currentTarget.className === "zoom__in")) {
       newViewBox[0] = viewBox[0] + viewBox[2] / 4;
       newViewBox[1] = viewBox[1] + viewBox[3] / 4;
       newViewBox[2] = viewBox[2] / 2;
@@ -114,7 +115,6 @@ export default function Map({ initialWikiData, setInitialWikiData }) {
     let ctm = elem.getScreenCTM();
     let pt = myMapSVG.current.createSVGPoint();
     if (event.touches) {
-      console.log(event.touches);
       pt.x = event.touches[0].clientX;
       pt.y = event.touches[0].clientY;
     } else {
@@ -199,6 +199,20 @@ export default function Map({ initialWikiData, setInitialWikiData }) {
             );
           })}
         </div>
+      </div>
+      <div className="zoom">
+        <img
+          alt="Zoom in"
+          onClick={mouseZoom}
+          className="zoom__in"
+          src={zoomIn}
+        ></img>
+        <img
+          alt="Zoom out"
+          onClick={mouseZoom}
+          className="zoom__out"
+          src={zoomOut}
+        ></img>
       </div>
       <button
         type="button"

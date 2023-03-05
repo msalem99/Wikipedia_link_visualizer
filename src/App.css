@@ -159,3 +159,14 @@ polyline:hover {
 .hidden {
   display: none;
 }
+.zoom {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  margin: 1rem;
+}
+.zoom__in,
+.zoom__out {
+  height: 50px;
+  cursor: pointer;
+}
