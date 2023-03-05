@@ -10,9 +10,9 @@ import {
 } from "./utils";
 
 export default function Map({ initialWikiData, setInitialWikiData }) {
-  const [viewBox, setViewBox] = useState([40, -55, 200, 200]);
+  const [viewBox, setViewBox] = useState([-110, -110, 400, 400]);
   const [pointerDown, setPointerDown] = useState(false);
-  const [arrows, setArrows] = useState([]);
+  const [arrows, setArrows] = useState(["140,90 140,90 140,140"]);
   const [levels, setLevels] = useState(2);
   const [search, setSearch] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -237,6 +237,23 @@ export default function Map({ initialWikiData, setInitialWikiData }) {
         ref={myMapSVG}
         preserveAspectRatio="xMidYMid slice"
       >
+        <text x="-50" y="20" fontSize="8px" fill="white">
+          <tspan x="-20" dy="1.2em">
+            - Click on any article to expand
+          </tspan>
+          <tspan x="-20" dy="1.2em">
+            - Navigate around by mouse or
+          </tspan>
+          <tspan x="-15" dy="1.2em">
+            touch panning
+          </tspan>
+          <tspan x="-20" dy="1.2em">
+            - Zoom using mouse wheel or
+          </tspan>
+          <tspan x="-15" dy="1.2em">
+            zoom buttons at the bottom
+          </tspan>
+        </text>
         {arrows.map((a, index) => (
           <Arrow
             key={index}

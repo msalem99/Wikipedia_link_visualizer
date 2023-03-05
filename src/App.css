@@ -29,7 +29,7 @@ body,
   outline-offset: 1px;
 }
 
-text {
+a text {
   font: italic 5px sans-serif;
   font-family: "Roboto", "Arial", sans-serif;
   font-weight: 900;
