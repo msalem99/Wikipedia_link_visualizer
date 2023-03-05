@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Wikipedia_link_visualizer/static/css/main.7669b1ca.css",
+    "main.js": "/Wikipedia_link_visualizer/static/js/main.e28175fd.js",
+    "static/media/Loading2.svg": "/Wikipedia_link_visualizer/static/media/Loading2.812b7c16b405e16f54a28493121d3b4b.svg",
+    "index.html": "/Wikipedia_link_visualizer/index.html",
+    "main.7669b1ca.css.map": "/Wikipedia_link_visualizer/static/css/main.7669b1ca.css.map",
+    "main.e28175fd.js.map": "/Wikipedia_link_visualizer/static/js/main.e28175fd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7669b1ca.css",
+    "static/js/main.e28175fd.js"
+  ]
+}
