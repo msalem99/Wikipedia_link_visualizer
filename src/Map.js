@@ -100,6 +100,7 @@ export default function Map({ initialWikiData, setInitialWikiData }) {
 
   function Down(e) {
     setPointerDown(true);
+
     let point = svgCoords(e, myMapSVG.current);
     anchorPoint.current[0] = point.x;
     anchorPoint.current[1] = point.y;
@@ -112,8 +113,14 @@ export default function Map({ initialWikiData, setInitialWikiData }) {
   function svgCoords(event, elem) {
     let ctm = elem.getScreenCTM();
     let pt = myMapSVG.current.createSVGPoint();
-    pt.x = event.clientX;
-    pt.y = event.clientY;
+    if (event.touches) {
+      console.log(event.touches);
+      pt.x = event.touches[0].clientX;
+      pt.y = event.touches[0].clientY;
+    } else {
+      pt.x = event.clientX;
+      pt.y = event.clientY;
+    }
     return pt.matrixTransform(ctm.inverse());
   }
 
@@ -206,12 +213,12 @@ export default function Map({ initialWikiData, setInitialWikiData }) {
         width="100%"
         height="100%"
         onWheel={mouseZoom}
-        onPointerDown={Down}
-        onPointerMove={Pan}
-        onPointerCancel={Up}
-        onPointerLeave={Up}
+        onPointerDown={(e) => !e.touches && Down(e)}
+        onPointerMove={(e) => !e.touches && Pan(e)}
+        onPointerUp={(e) => !e.touches && Up(e)}
+        onTouchStart={Down}
         onTouchMove={Pan}
-        onPointerUp={Up}
+        onTouchEnd={Up}
         className="Main"
         ref={myMapSVG}
         preserveAspectRatio="xMidYMid slice"
