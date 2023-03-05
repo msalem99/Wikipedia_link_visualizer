@@ -1,5 +1,5 @@
 {
-  "short_name": "Wiki link viewer",
-  "name": "Wiki link viewer",
+  "short_name": "Wiki link visualizer",
+  "name": "Wikipedia link visualizer",
   "start_url": "."
 }
