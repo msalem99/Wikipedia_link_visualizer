@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/Wikipedia_link_visualizer/static/css/main.7669b1ca.css",
-    "main.js": "/Wikipedia_link_visualizer/static/js/main.de357fab.js",
+    "main.css": "/Wikipedia_link_visualizer/static/css/main.c033c738.css",
+    "main.js": "/Wikipedia_link_visualizer/static/js/main.4c11f602.js",
     "static/media/Loading2.svg": "/Wikipedia_link_visualizer/static/media/Loading2.812b7c16b405e16f54a28493121d3b4b.svg",
+    "static/media/zoomIn.svg": "/Wikipedia_link_visualizer/static/media/zoomIn.280ee6e4b38fe5e076827d52d67e6208.svg",
+    "static/media/zoomOut.svg": "/Wikipedia_link_visualizer/static/media/zoomOut.dd2089ce2375f760a96afe3c4042014b.svg",
     "index.html": "/Wikipedia_link_visualizer/index.html",
-    "main.7669b1ca.css.map": "/Wikipedia_link_visualizer/static/css/main.7669b1ca.css.map",
-    "main.de357fab.js.map": "/Wikipedia_link_visualizer/static/js/main.de357fab.js.map"
+    "main.c033c738.css.map": "/Wikipedia_link_visualizer/static/css/main.c033c738.css.map",
+    "main.4c11f602.js.map": "/Wikipedia_link_visualizer/static/js/main.4c11f602.js.map"
   },
   "entrypoints": [
-    "static/css/main.7669b1ca.css",
-    "static/js/main.de357fab.js"
+    "static/css/main.c033c738.css",
+    "static/js/main.4c11f602.js"
   ]
 }
