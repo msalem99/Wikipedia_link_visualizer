@@ -1,38 +1,161 @@
+html,
+body,
+#root,
 .App {
   text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  background-color: black;
+}
+.App {
+  display: flex;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.image__container {
+  transition: all 0.1s ease-in-out;
+  outline: 2px #ffffff;
+  outline-style: solid;
+  outline-offset: 1px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image__container:hover {
+  outline: 4px #3d4953;
+  outline-style: solid;
+  outline-offset: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+text {
+  font: italic 5px sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 900;
+  text-anchor: middle;
+}
+.form__wrapper {
+  height: 100%;
+  width: 100%;
+  margin-top: 10rem;
+}
+.wikipedia__logo {
+  height: 30%;
+}
+form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5rem;
+}
+input {
+  width: 15rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  padding: 15px 2.5rem 15px 15px;
+  height: 1rem;
+  color: #6c6c6c;
+  border-radius: 6px;
+  border: none;
+  transition: all 0.4s;
+
+  background: url("https://www.svgrepo.com/download/169887/wikipedia-logo.svg")
+    no-repeat right;
+  background-size: 2rem;
+  background-color: #eaeaeb;
+  background-position: 16rem 7px;
+}
+input:focus {
+  border: none;
+  outline: none;
+  box-shadow: 0 1px 12px #b8c6db;
+  -moz-box-shadow: 0 1px 12px #b8c6db;
+  -webkit-box-shadow: 0 1px 12px #b8c6db;
+}
+.result__box {
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  border-radius: 6px;
+  margin-top: 2px;
+  background-color: #eaeaeb;
+  text-align: left;
+  transition: all 0.4s;
+  opacity: 1;
+  width: 17rem;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.result__box li {
+  list-style: none;
+  padding: 8px 12px;
+
+  cursor: default;
+  border-radius: 3px;
+}
+
+.result__box li:hover {
+  background: #b8c6db;
+}
+.loading__list__gif {
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.loading__data__gif {
+  margin: 0 auto;
+}
+.button__to__search__again {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0.3rem 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: black;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+  border-color: #ffffff;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  margin: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.button__to__search__again:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+polyline:hover {
+  cursor: pointer;
+}
+.search__map {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  margin: 1rem;
+}
+.search__map__results {
+  margin: auto;
+  margin-top: 3px;
+}
+@media only screen and (max-width: 600px) {
+  .search__map {
+    top: 5rem;
+    left: 0px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.hidden {
+  display: none;
 }
